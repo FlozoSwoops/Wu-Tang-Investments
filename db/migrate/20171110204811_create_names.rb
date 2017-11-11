@@ -5,6 +5,7 @@ class CreateNames < ActiveRecord::Migration[5.1]
       t.string :username
       t.string :occupation
       t.integer :income
+      
 
       t.timestamps
     end

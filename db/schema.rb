@@ -25,23 +25,25 @@ ActiveRecord::Schema.define(version: 20171110210604) do
   end
 
   create_table "portfolios", force: :cascade do |t|
-    t.string "name"
+    t.string "type"
     t.integer "value"
     t.string "risk"
+    t.bigint "investor_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["investor_id"], name: "index_portfolios_on_investor_id"
   end
 
   create_table "stocks", force: :cascade do |t|
     t.string "symbol"
-    t.integer "value"
+    t.integer "lastprice"
     t.integer "shares"
-    t.integer "close"
     t.bigint "portfolio_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["portfolio_id"], name: "index_stocks_on_portfolio_id"
   end
 
+  add_foreign_key "portfolios", "investors"
   add_foreign_key "stocks", "portfolios"
 end
