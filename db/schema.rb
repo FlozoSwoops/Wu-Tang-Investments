@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 20171110210604) do
   end
 
   create_table "portfolios", force: :cascade do |t|
-    t.string "type"
+    t.string "name"
     t.integer "value"
     t.string "risk"
     t.bigint "investor_id"

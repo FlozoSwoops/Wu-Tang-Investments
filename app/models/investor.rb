@@ -1,3 +1,3 @@
-class Name < ApplicationRecord
+class Investor < ApplicationRecord
     has_many :porfolios
 end
