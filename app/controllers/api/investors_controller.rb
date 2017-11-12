@@ -24,6 +24,15 @@ class Api::InvestorsController < ApplicationController
         render json: @investor
     end
 
+    def destory
+        investor_id = params[:id]
+        @investor = Investor.find_by_id(investor_id)
+        @investor.destroy
+        render json: {
+            msg: "Deleted"
+        }
+    end
+
     
     private
     
