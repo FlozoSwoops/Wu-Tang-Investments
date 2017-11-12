@@ -8,4 +8,19 @@ class Api::PortfoliosController < ApplicationController
         @portfolio = Portfolio.find(params[:id])
         render json: @portfolio
     end
+
+    def create
+        @investor = Investor.find(params[:investor_id])
+        @portfolio = Portfolio.new(portfolio_params)
+        @investor.portfolios << @portfolio
+        @investor.save!
+        @portfolios = @investor.portfolios
+        render json: @portfolios
+    end
+
+    private
+    
+    def portfolio_params
+        params.require(:portfolio).permit(:name, :value, :risk)
+    end
 end
