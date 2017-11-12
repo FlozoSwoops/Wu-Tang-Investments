@@ -1,3 +1,3 @@
 class Investor < ApplicationRecord
-    has_many :porfolios
+    has_many :portfolios
 end
