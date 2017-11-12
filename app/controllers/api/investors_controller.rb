@@ -16,9 +16,18 @@ class Api::InvestorsController < ApplicationController
         end
     end
 
+    def update
+        investor_id = params[:id]
+        @investor = Investor.find_by_id(investor_id)
+        @investor.update_attributes(investor_params)
+        
+        render json: @investor
+    end
+
     
     private
+    
     def investor_params
-    params.require(:investor).permit(:name, :username, :occupation, :income,)
+        params.require(:investor).permit(:name, :username, :occupation, :income,)
     end
 end
