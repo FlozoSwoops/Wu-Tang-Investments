@@ -1,19 +1,41 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import { BrowserRouter as Router, Switch, Link, Route } from 'react-router-dom'
+import styled from 'styled-components'
+import axios from 'axios'
 import './App.css';
+import Homepage from './components/homepage'
 
 class App extends Component {
+
+
+  // state = {
+  //   investors: [],
+  // }
+
+
+  // async componentWillMount() {
+  //   try {
+  //     const response = await axios.get("api/investors")
+  //     this.setState({ investors: response.data })
+  //   } catch (error) {
+  //     console.log(error)
+  //   }
+  // }
+
+
+
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
+      <Router>
+        <div className="App">
+
+          <Switch>
+            <Route exact path='/' component={Homepage} />
+            <Route exact path='/investors/:investorId' component={InvestorProfile}/>
+          {/* <Route exact path='/investors/:investorId/stocks/:stockId' /> */}
+          </Switch>
+        </div>
+      </Router>
     );
   }
 }
