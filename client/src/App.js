@@ -4,23 +4,12 @@ import styled from 'styled-components'
 import axios from 'axios'
 import './App.css';
 import Homepage from './components/homepage'
+import InvestorProfile from './components/InvestorProfile'
 
 class App extends Component {
 
 
-  // state = {
-  //   investors: [],
-  // }
-
-
-  // async componentWillMount() {
-  //   try {
-  //     const response = await axios.get("api/investors")
-  //     this.setState({ investors: response.data })
-  //   } catch (error) {
-  //     console.log(error)
-  //   }
-  // }
+  
 
 
 
@@ -32,7 +21,8 @@ class App extends Component {
           <Switch>
             <Route exact path='/' component={Homepage} />
             <Route exact path='/investors/:investorId' component={InvestorProfile}/>
-          {/* <Route exact path='/investors/:investorId/stocks/:stockId' /> */}
+            <Route exact path='/inestors/:investorId/portfolios/:portfolioId' />
+          {/* <Route exact path='/investors/:investorId/portfolios/:portfolioIdstocks/:stockId' /> */}
           </Switch>
         </div>
       </Router>
