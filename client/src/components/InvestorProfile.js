@@ -32,6 +32,13 @@ class InvestorProfile extends Component {
 
             <div>
                 <h1>{this.state.investor.name}'s Portfolios</h1>
+                <div>
+                Occupation: {this.state.investor.occupation}
+                </div>
+                <div>
+                Investor: {this.state.investor.name}
+                </div>
+                Portfolio Types:
                 <ul>
                     {this.state.portfolios.map((portfolio) => {
                         return (
