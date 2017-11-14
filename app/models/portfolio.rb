@@ -1,4 +1,4 @@
 class Portfolio < ApplicationRecord
     belongs_to :investor
-    has_many :stocks
+    has_many :stocks, dependent: :destroy
 end
