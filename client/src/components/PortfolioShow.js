@@ -11,7 +11,9 @@ class PortfolioShow extends Component {
     async componentWillMount() {
         try {
             const investorId = this.props.match.params.investorId
-            const response = await axios.get(`/api/investors/${investorId}/portfolios`)
+            const portfolioId = this.props.match.params.portfolioId
+            const response = await axios.get(`/api/investors/${investorId}/portfolios/${portfolioId}`)
+            console.log(response.data)
             this.setState({ portfolio: response.data })
         } catch (error) {
             console.log(error)
@@ -20,6 +22,7 @@ class PortfolioShow extends Component {
             const investorId = this.props.match.params.investorId
             const portfolioId = this.props.match.params.portfolioId
             const response = await axios.get(`/api/investors/${investorId}/portfolios/${portfolioId}/stocks`)
+            console.log(response.data)
             this.setState({ stocks: response.data })
         } catch (error) {
             console.log(error)
@@ -30,8 +33,8 @@ class PortfolioShow extends Component {
         return (
             <div>
                 <h2>Portfolio information</h2>
-                   <div><span><em>{this.state.portfolio.name}</em>  <em>{this.state.portfolio.value}</em></span></div>
-                   <div><span>{this.state.portfolio.risk}</span></div>
+                   <div><span>Type: <em>{this.state.portfolio.name}</em>  Portfolio Value:<em>{this.state.portfolio.value}</em></span></div>
+                   <div><span>Risk type: {this.state.portfolio.risk}</span></div>
                 
                 <h3>Stocks</h3>
 
