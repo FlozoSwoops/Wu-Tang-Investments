@@ -35,7 +35,7 @@ class InvestorProfile extends Component {
                 <ul>
                     {this.state.portfolios.map((portfolio) => {
                         return (
-                            <Link to={`/investors/${this.state.investor.igitd}/portfolios/${portfolio.id}`}>{portfolio.risk}</Link>
+                            <Link to={`/investors/${this.state.investor.id}/portfolios/${portfolio.id}`}>{portfolio.risk}</Link>
 
                         )
                     })}

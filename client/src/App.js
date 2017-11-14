@@ -5,11 +5,11 @@ import axios from 'axios'
 import './App.css';
 import Homepage from './components/homepage'
 import InvestorProfile from './components/InvestorProfile'
-
+import PortfolioShow from './components/PortfolioShow'
 class App extends Component {
 
 
-  
+
 
 
 
@@ -20,9 +20,9 @@ class App extends Component {
 
           <Switch>
             <Route exact path='/' component={Homepage} />
-            <Route exact path='/investors/:investorId' component={InvestorProfile}/>
-            <Route exact path='/inestors/:investorId/portfolios/:portfolioId' />
-          {/* <Route exact path='/investors/:investorId/portfolios/:portfolioIdstocks/:stockId' /> */}
+            <Route exact path='/investors/:investorId' component={InvestorProfile} />
+            <Route exact path='/investors/:investorId/portfolios/:portfolioId' component={PortfolioShow} />
+            <Route exact path='/investors/:investorId/portfolios/:portfolioId/stocks/:stockId' />
           </Switch>
         </div>
       </Router>
