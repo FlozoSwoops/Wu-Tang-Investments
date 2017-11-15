@@ -37,17 +37,17 @@ class NewInvestorForm extends Component {
                 <form onSubmit={this.handleSubmit} >
                 <div>
                     <label htmlFor= "name">  Enter Name</label>
-                    <input onChange = {this.handleChange} placeholder = "Post Name Here" value = {this.state.newInvestor.name} type = "text" name = "name"/>
+                    <input onChange = {this.handleChange} placeholder = "Enter Name Here" value = {this.state.newInvestor.name} type = "text" name = "name"/>
                     </div>
 
                     <div>
                     <label htmlFor= "username">  Enter Username</label>
-                    <input onChange = {this.handleChange} placeholder = "Post Username Here" value = {this.state.newInvestor.username} type = "text" name = "username"/>
+                    <input onChange = {this.handleChange} placeholder = "Enter Username Here" value = {this.state.newInvestor.username} type = "text" name = "username"/>
                     </div>
 
                     <div>
                     <label htmlFor= "occupation">  Enter Occupation</label>
-                    <input onChange = {this.handleChange} placeholder = "Post Occupation Here" value = {this.state.newInvestor.occupation} type = "text" name = "occupation"/>
+                    <input onChange = {this.handleChange} placeholder = "Enter Occupation Here" value = {this.state.newInvestor.occupation} type = "text" name = "occupation"/>
                     </div>
 
                     <div>
