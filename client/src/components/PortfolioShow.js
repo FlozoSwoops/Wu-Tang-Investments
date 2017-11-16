@@ -30,6 +30,18 @@ class PortfolioShow extends Component {
         }
     }
 
+    createStock = async (newStock) => {
+        const investorId = this.props.match.params.investorId
+        const portfolioId = this.props.match.params.portfolioId
+        const response = await axios.post(`/api/investors/${investorId}/portfolios/${portfolioId}/stocks, 
+            "stock": newStock
+            `)
+        const newStocks = [...this.state.stocks]
+        newStock.push(response.data)
+        this.setstate({ stocks: newStock})
+
+    }
+
     render() {
         return (
             <div>
@@ -52,7 +64,7 @@ class PortfolioShow extends Component {
                 
 
 
-                <AddStockForm />
+                <AddStockForm createStock={this.createStock} />
             </div>
            
         );
