@@ -28,7 +28,7 @@ class Api::InvestorsController < ApplicationController
         investor_id = params[:id]
         @investor = Investor.find_by_id(investor_id)
         @investor.destroy
-        investors = Investor.all
+        # investors = Investor.all
         render json: {
             msg: "Deleted"
         }

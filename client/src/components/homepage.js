@@ -70,6 +70,7 @@ class homepage extends Component {
         console.log(investorId)
         const response = await axios.delete(`/api/investors/${investorId}`)
         await this.setState({ investors: response.data})
+        await window.location.href = (localhost)
     }
 
 

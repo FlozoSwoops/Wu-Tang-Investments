@@ -15,6 +15,7 @@ class InvestorProfile extends Component {
             occupation: '',
             income: ''
         },
+        redirectToInvestors: false
     }
     async componentWillMount() {
         try {
@@ -57,6 +58,14 @@ class InvestorProfile extends Component {
         this.setState({ investor: response.data})
         this.setState({ editMode: false })
     }
+
+    deleteInvestor = async (event) => {
+        const investorId = this.props.match.params.investorId
+        console.log(investorId)
+        const response = await axios.delete(`/api/investors/${investorId}`)
+        console.log(response)
+        this.setState({ investors: response.data, redirectToInvestors:true})
+    }
     
     render() {
         return (
@@ -87,7 +96,7 @@ class InvestorProfile extends Component {
 
                 {this.state.editMode? <button onClick={this.toggleForm}>Close Form</button>: ''}
                 </div>
-                <button>Delete User</button>
+                <button onClick={this.deleteInvestor}>Delete User</button>
             </div>
 
 
