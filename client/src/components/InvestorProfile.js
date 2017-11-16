@@ -56,8 +56,8 @@ class InvestorProfile extends Component {
         console.log(response)
         this.setState({ investor: response.data})
         this.setState({ editMode: false })
-        
     }
+    
     render() {
         return (
 

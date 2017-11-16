@@ -23,6 +23,7 @@ class App extends Component {
             <Route exact path='/investors/:investorId' component={InvestorProfile} />
             <Route exact path='/investors/:investorId/portfolios/:portfolioId' component={PortfolioShow} />
             <Route exact path='/investors/:investorId/portfolios/:portfolioId/stocks/:stockId' />
+            
           </Switch>
         </div>
       </Router>

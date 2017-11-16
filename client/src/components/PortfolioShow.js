@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
 import axios from 'axios'
+import AddStockForm from './AddStockForm'
 
 class PortfolioShow extends Component {
     state = {
@@ -48,10 +49,12 @@ class PortfolioShow extends Component {
                     })}
                 </div>
                 
+                
 
 
-
+                <AddStockForm />
             </div>
+           
         );
     }
 }
