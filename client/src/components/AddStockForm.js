@@ -11,7 +11,7 @@ color: white;
 
 label {
     color: white;
-    size: 50px
+    text-size: 50px
 }
 `
 

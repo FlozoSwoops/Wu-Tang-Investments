@@ -18,7 +18,7 @@ text-shadow: 2px 2px 4px #000000;
 
 a {
   text-decoration: none;
-  color: black;
+  color: white;
 }
 a:hover {
 color: red;
@@ -114,7 +114,7 @@ class InvestorProfile extends Component {
                 </ul>
                 
                 <div>
-                {this.state.editMode ? <EditUserForm handleChange={this.handleChange} editInvestor={this.state.editInvestor} updateInvestor={this.updateInvestor}/>: <Button onClick={this.toggleForm}>Update Investor Info</Button>}
+                {this.state.editMode ? <EditUserForm investor={this.investor} handleChange={this.handleChange} editInvestor={this.state.editInvestor} updateInvestor={this.updateInvestor}/>: <Button onClick={this.toggleForm}>Update Investor Info</Button>}
 
                 {this.state.editMode? <Button onClick={this.toggleForm}>Close Form</Button>: ''}
                 </div>

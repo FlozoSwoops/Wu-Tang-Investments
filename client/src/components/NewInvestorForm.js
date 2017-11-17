@@ -8,10 +8,16 @@ const Form = styled.form`
 position: center;
 margin: auto 20% ;
 background-color: rgba(255, 255, 255, .2);
-color: black;
+color: white;
 `
 
-
+const Button = styled.button`
+height: 30px;
+background-color: rgba(255 255 255 );
+box-shadow: 2px 2px 4px ;
+border-radius: 5px;
+text-shadow: 2px 2px 4px #000000;
+`
 class NewInvestorForm extends Component {
 
     state = {
@@ -67,7 +73,7 @@ class NewInvestorForm extends Component {
                         <input onChange={this.handleChange} placeholder="Enter Income Here" value={this.state.newInvestor.income} type="text" name="income" />
                     </div>
 
-                    <button type="submit">Add A Investor </button>
+                    <Button type="submit">Add A Investor </Button>
                 </Form>
 
             </div>
