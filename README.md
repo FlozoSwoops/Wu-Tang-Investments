@@ -1,6 +1,8 @@
 
 
-##Wu-Tang Investments
+##Wu-Tang Investments##
+
+####Make sure to use HTTP instead of HTTPS####
 
 
 [ERD](https://imgur.com/NNDexGg)
@@ -9,7 +11,7 @@
 
 [Trello Board](https://trello.com/b/LR5e2mou/stock)
 
-[Deployed Sites](https://wu-tang-investments.herokuapp.com/)
+[Deployed Sites](http://wu-tang-investments.herokuapp.com/)
 
 
 This is fun app made to help investment bankers keep track of client stock investments. It allows the user to look up stock prices using the 
