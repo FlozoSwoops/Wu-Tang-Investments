@@ -6,7 +6,7 @@ import styled from 'styled-components'
 
 const Form = styled.form`
 position: center;
-margin: auto 400px ;
+margin: auto 20% ;
 background-color: rgba(255, 255, 255, .2);
 color: black;
 `

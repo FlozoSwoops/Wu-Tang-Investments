@@ -1,5 +1,13 @@
 import React, { Component } from 'react';
 import axios from 'axios'
+import styled from 'styled-components'
+
+const Form = styled.form`
+position: center;
+margin: auto 20% ;
+background-color: rgba(255, 255, 255, .2);
+color: black;
+`
 
 class EditInvestorForm extends Component {
 
@@ -7,7 +15,7 @@ class EditInvestorForm extends Component {
     render() {
         return (
             <div>
-                <form onSubmit={this.props.updateInvestor} >
+                <Form onSubmit={this.props.updateInvestor} >
                 <div>
                     <label htmlFor= "name">  Enter Name</label>
                     <input onChange={this.props.handleChange} placeholder="Post Name Here" value={this.props.editInvestor.name} type="text" name="name"/>
@@ -29,7 +37,7 @@ class EditInvestorForm extends Component {
                     </div>
 
                     <button type="submit">Submit Changes</button>
-                </form>
+                </Form>
 
             </div>
         );

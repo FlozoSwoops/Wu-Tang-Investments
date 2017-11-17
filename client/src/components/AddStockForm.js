@@ -3,6 +3,18 @@ import axios from 'axios'
 import jsonp from 'jsonp'
 import styled from 'styled-components'
 
+const Form = styled.form`
+position: center;
+margin: auto 20% ;
+background-color: rgba(255, 255, 255, .2);
+color: white;
+
+label {
+    color: white;
+    size: 50px
+}
+`
+
 const Wrapper = styled.div`
 position: center;
 color: green;
@@ -77,7 +89,7 @@ class AddStockForm extends Component {
     render() {
         return (
             <Wrapper>
-                <form onSubmit={this.handleSubmit}>
+                <Form onSubmit={this.handleSubmit}>
                     <div>
                         <label htmlFor="symbol">  Enter Symbol</label>
                         <input onChange={this.handleChange} placeholder="Enter Name Here" value={this.state.stockInfo.symbol} type="text" name="symbol" />
@@ -86,14 +98,14 @@ class AddStockForm extends Component {
                     </div>
 
 
-                </form>
+                </Form>
                 <h3>Current Stock info:</h3>
                 <br/>
                 <h3>Symbol: {this.state.Newstock.Symbol}</h3>
                 <br/>
                 <h3>Current Price: {this.state.Newstock.LastPrice}</h3>
                 
-                <form onSubmit={this.buyStock}>
+                <Form onSubmit={this.buyStock}>
                     <div>
                         <div>
                            
@@ -107,7 +119,7 @@ class AddStockForm extends Component {
                     </div>
 
 
-                </form>
+                </Form>
 
 
             </Wrapper>
