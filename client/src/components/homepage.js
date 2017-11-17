@@ -74,6 +74,7 @@ class homepage extends Component {
     }
 
     createInvestor = async (newInvestor) => {
+        console.log('in hereeeeeeee') 
         const response = await axios.post(`/api/investors`, {
             "investor": newInvestor
         })
@@ -81,6 +82,7 @@ class homepage extends Component {
         newInvestors.push(response.data)
         this.setState({ investors: newInvestors })
     }
+
     deleteInvestor = async (investorId) => {
         console.log(investorId)
         const response = await axios.delete(`/api/investors/${investorId}`)
@@ -105,11 +107,11 @@ class homepage extends Component {
 
                     })}
                 </List>
-                <wrapper>
+                <Wrapper>
                     {this.state.showForm ? <NewInvestorForm createInvestor={this.createInvestor} /> : <Button onClick={this.toggleForm}>Create Investor</Button>}
 
                     {this.state.showForm ? <Button onClick={this.toggleForm}>Close Form</Button> : ''}
-                </wrapper>
+                </Wrapper>
             </Wrapper>
         );
     }

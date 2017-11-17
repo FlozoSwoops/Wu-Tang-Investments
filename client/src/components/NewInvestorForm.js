@@ -45,8 +45,8 @@ class NewInvestorForm extends Component {
 
     render() {
         return (
-            <div class="row">
-                <Form fonSubmit={this.handleSubmit} >
+            <div>
+                <Form onSubmit={this.handleSubmit} >
                     <div>
                         <label htmlFor="name">  Enter Name</label>
                         <input onChange={this.handleChange} placeholder="Enter Name Here" value={this.state.newInvestor.name} type="text" name="name" />
