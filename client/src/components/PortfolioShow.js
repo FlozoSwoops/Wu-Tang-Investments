@@ -2,7 +2,21 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
 import axios from 'axios'
 import AddStockForm from './AddStockForm'
+import styled from 'styled-components'
 
+const Wrapper = styled.div`
+position: center;
+color: lime;
+text-shadow: 2px 2px 4px #000000;
+
+a {
+  text-decoration: none;
+  color: black;
+}
+a:hover {
+color: red;
+}
+`
 class PortfolioShow extends Component {
     state = {
         portfolio: {},
@@ -44,7 +58,7 @@ class PortfolioShow extends Component {
 
     render() {
         return (
-            <div>
+            <Wrapper>
                 <h2>Portfolio information</h2>
                    <div><span>Type: <em>{this.state.portfolio.name}</em>  Portfolio Value:<em>{this.state.portfolio.value}</em></span></div>
                    <div><span>Risk type: {this.state.portfolio.risk}</span></div>
@@ -65,7 +79,7 @@ class PortfolioShow extends Component {
 
 
                 <AddStockForm createStock={this.createStock} />
-            </div>
+            </Wrapper>
            
         );
     }

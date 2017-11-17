@@ -4,6 +4,15 @@ import { Link } from 'react-router-dom'
 import NewInvestorForm from './NewInvestorForm'
 import styled from 'styled-components'
 
+const Button = styled.button`
+height: 30px;
+background-color: rgba(255 255 255 );
+box-shadow: rgb(202, 239, 171) 0px 1px 0px 0px inset;
+border-radius: 5px;
+text-shadow: 2px 2px 4px #000000;
+
+`
+
 const Wrapper = styled.div`
 position: center;
 color: white;
@@ -20,7 +29,7 @@ color: red;
 
 const List = styled.ul`
 list-style-type: none;
-margin-left: 20px
+margin-left: 20px;
 font-size: 30px;
 padding: 75gipx; 
 @media(min-width: 1366px){
@@ -97,9 +106,9 @@ class homepage extends Component {
                     })}
                 </List>
                 <wrapper>
-                    {this.state.showForm ? <NewInvestorForm createInvestor={this.createInvestor} /> : <button onClick={this.toggleForm}>Create Investor</button>}
+                    {this.state.showForm ? <NewInvestorForm createInvestor={this.createInvestor} /> : <Button onClick={this.toggleForm}>Create Investor</Button>}
 
-                    {this.state.showForm ? <button onClick={this.toggleForm}>Close Form</button> : ''}
+                    {this.state.showForm ? <Button onClick={this.toggleForm}>Close Form</Button> : ''}
                 </wrapper>
             </Wrapper>
         );

@@ -4,6 +4,27 @@ import axios from 'axios'
 import EditUserForm from './EditUserForm'
 import styled from 'styled-components'
 
+const Button = styled.button`
+height: 30px;
+background-color: rgba(255 255 255 );
+box-shadow: 2px 2px 4px ;
+border-radius: 5px;
+text-shadow: 2px 2px 4px #000000;
+`
+const Wrapper = styled.div`
+position: center;
+color: green;
+text-shadow: 2px 2px 4px #000000;
+
+a {
+  text-decoration: none;
+  color: black;
+}
+a:hover {
+color: red;
+}
+`
+
 class InvestorProfile extends Component {
 
     state = {
@@ -73,7 +94,7 @@ class InvestorProfile extends Component {
 
 
 
-            <div>
+            <Wrapper>
                 <h1>{this.state.investor.name}'s Portfolios</h1>
                 <div>
                     Occupation: {this.state.investor.occupation}
@@ -93,12 +114,12 @@ class InvestorProfile extends Component {
                 </ul>
                 
                 <div>
-                {this.state.editMode ? <EditUserForm handleChange={this.handleChange} editInvestor={this.state.editInvestor} updateInvestor={this.updateInvestor}/>: <button onClick={this.toggleForm}>Update Investor Info</button>}
+                {this.state.editMode ? <EditUserForm handleChange={this.handleChange} editInvestor={this.state.editInvestor} updateInvestor={this.updateInvestor}/>: <Button onClick={this.toggleForm}>Update Investor Info</Button>}
 
-                {this.state.editMode? <button onClick={this.toggleForm}>Close Form</button>: ''}
+                {this.state.editMode? <Button onClick={this.toggleForm}>Close Form</Button>: ''}
                 </div>
-                <button onClick={this.deleteInvestor}>Delete User</button>
-            </div>
+                <Button onClick={this.deleteInvestor}>Delete User</Button>
+            </Wrapper>
 
 
 
