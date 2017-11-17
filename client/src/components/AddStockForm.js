@@ -47,7 +47,7 @@ class AddStockForm extends Component {
         event.preventDefault()
         try {
             const symbol = this.state.stockInfo.symbol
-            jsonp(`https://dev.markitondemand.com/MODApis/Api/v2/Quote/jsonp?symbol=${symbol}`, null, (error, data) => {
+            jsonp(`http://dev.markitondemand.com/MODApis/Api/v2/Quote/jsonp?symbol=${symbol}`, null, (error, data) => {
                 console.log(data)
                 this.setState({ Newstock: data })
             })
