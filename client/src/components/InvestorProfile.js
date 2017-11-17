@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
 import axios from 'axios'
 import EditUserForm from './EditUserForm'
+import styled from 'styled-components'
 
 class InvestorProfile extends Component {
 

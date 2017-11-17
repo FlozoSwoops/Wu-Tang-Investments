@@ -4,7 +4,11 @@ import { Link } from 'react-router-dom'
 import NewInvestorForm from './NewInvestorForm'
 import styled from 'styled-components'
 
-const wrapper = styled.div`
+const Wrapper = styled.div`
+position: center;
+color: white;
+text-shadow: 2px 2px 4px #000000;
+
 a {
   text-decoration: none;
   color: black;
@@ -16,6 +20,7 @@ color: red;
 
 const List = styled.ul`
 list-style-type: none;
+margin-left: 20px
 font-size: 30px;
 padding: 75gipx; 
 @media(min-width: 1366px){
@@ -76,10 +81,12 @@ class homepage extends Component {
 
     render() {
         return (
-            <wrapper>
+            <Wrapper>
 
                 <h1>Wu Tang Investments</h1>
-                <p>A subsidiary of Wu Tang Financial</p>
+                <h3>A subsidiary of Wu Tang Financial</h3>
+
+                <h5>Where we know Cash Rules everything around me except when other asset classes provide higer risk adjusted yields!</h5>
 
                 <List>
                     {this.state.investors.map((investor) => {
@@ -89,12 +96,12 @@ class homepage extends Component {
 
                     })}
                 </List>
-                <div>
+                <wrapper>
                     {this.state.showForm ? <NewInvestorForm createInvestor={this.createInvestor} /> : <button onClick={this.toggleForm}>Create Investor</button>}
 
                     {this.state.showForm ? <button onClick={this.toggleForm}>Close Form</button> : ''}
-                </div>
-            </wrapper>
+                </wrapper>
+            </Wrapper>
         );
     }
 }
