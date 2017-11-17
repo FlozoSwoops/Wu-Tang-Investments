@@ -13,7 +13,7 @@ text-shadow: 2px 2px 4px #000000;
 `
 const Wrapper = styled.div`
 position: center;
-color: green;
+color: white;
 text-shadow: 2px 2px 4px #000000;
 
 a {

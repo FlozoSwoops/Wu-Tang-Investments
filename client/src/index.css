@@ -3,5 +3,6 @@ body {
     padding: 0;
     font-family: 'Roboto Slab', serif;
     background-image: url("https://www.afsa.gov.au/sites/g/files/net1601/f/images/slide/slide-building-min.jpg"); 
-    background-size: auto 949px;
+    background-size: 100% 949px;
+    background-attachment: fixed;
   }
