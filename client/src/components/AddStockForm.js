@@ -55,7 +55,12 @@ class AddStockForm extends Component {
 
     buyStock = (event) => {
         event.preventDefault()
-        this.props.createStock(this.state.Newstock)
+        const payload = {
+            symbol: this.state.Newstock.Symbol,
+            lastprice: this.state.Newstock.LastPrice,
+            shares: this.state.shares
+        }
+        this.props.createStock(payload)
         const emptyForm = {
             symbol: '',
             lastPrice: '',
