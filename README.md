@@ -3,7 +3,7 @@
 ##Wu-Tang Investments
 
 
-
+[ERD](https://imgur.com/NNDexGg)
 
 [Wireframes](https://gomockingbird.com/projects/irc9n68/4gXVnC)
 
@@ -20,6 +20,8 @@ Future Development
 2. Adding charts for stock analysis
 3. Adding charts for portfolio diversity analysis
 4. A ticker to keep track of stock trends throughout the day
+5. Revamp db for and site layout for improved UX
+6. Further styling for improved UX
 
 Technologies Used
 1. Ruby on Rails
