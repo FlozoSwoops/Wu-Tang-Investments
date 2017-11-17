@@ -6,6 +6,7 @@ import './App.css';
 import Homepage from './components/homepage'
 import InvestorProfile from './components/InvestorProfile'
 import PortfolioShow from './components/PortfolioShow'
+import NavBar from './components/NavBar'
 class App extends Component {
 
 
@@ -17,7 +18,7 @@ class App extends Component {
     return (
       <Router>
         <div className="App">
-
+          <NavBar />
           <Switch>
             <Route exact path='/' component={Homepage} />
             <Route exact path='/investors/:investorId' component={InvestorProfile} />

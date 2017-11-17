@@ -12,7 +12,6 @@ a {
 a:hover {
 color: red;
 }
-
 `
 
 const List = styled.ul`
@@ -29,7 +28,8 @@ padding: 75px;
 
 a {
   text-decoration: none;
-  color: silver;
+  color: blue;
+  text-shadow: 10px 10px 20px green
 }
 a:hover {
 color: red;
@@ -38,7 +38,7 @@ color: red;
 
 class homepage extends Component {
 
-   
+
 
     state = {
         investors: [],
@@ -56,11 +56,11 @@ class homepage extends Component {
     }
 
     toggleForm = () => {
-        this.setState({showForm: !this.state.showForm})
+        this.setState({ showForm: !this.state.showForm })
     }
 
     createInvestor = async (newInvestor) => {
-        const response = await axios.post(`/api/investors`,{
+        const response = await axios.post(`/api/investors`, {
             "investor": newInvestor
         })
         const newInvestors = [...this.state.investors]
@@ -70,7 +70,7 @@ class homepage extends Component {
     deleteInvestor = async (investorId) => {
         console.log(investorId)
         const response = await axios.delete(`/api/investors/${investorId}`)
-        await this.setState({ investors: response.data})
+        await this.setState({ investors: response.data })
     }
 
 
@@ -84,19 +84,19 @@ class homepage extends Component {
                 <List>
                     {this.state.investors.map((investor) => {
                         return (
-                            <li><Link to={`/investors/${investor.id}`}>{investor.username}</Link></li>
-                                )
+                            <li><Link to={`/investors/${investor.id}`}> {investor.username} </Link></li>
+                        )
 
-                })}
+                    })}
                 </List>
                 <div>
-                {this.state.showForm ? <NewInvestorForm createInvestor={this.createInvestor}/>: <button onClick={this.toggleForm}>Create Investor</button>}
+                    {this.state.showForm ? <NewInvestorForm createInvestor={this.createInvestor} /> : <button onClick={this.toggleForm}>Create Investor</button>}
 
-                {this.state.showForm ? <button onClick={this.toggleForm}>Close Form</button>: ''}
+                    {this.state.showForm ? <button onClick={this.toggleForm}>Close Form</button> : ''}
                 </div>
             </wrapper>
-                        );
-                    }
+        );
+    }
 }
 
-                    export default homepage;
+export default homepage;

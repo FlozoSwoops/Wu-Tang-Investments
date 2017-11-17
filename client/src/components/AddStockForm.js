@@ -3,6 +3,9 @@ import axios from 'axios'
 import jsonp from 'jsonp'
 import styled from 'styled-components'
 
+const Button = styled.button`
+
+`
 
 class AddStockForm extends Component {
 
@@ -74,14 +77,6 @@ class AddStockForm extends Component {
                 <h3>Symbol: {this.state.Newstock.Symbol}</h3>
                 <br/>
                 <h3>Current Price: {this.state.Newstock.LastPrice}</h3>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
                 <br/>
                 <br/>
                 <br/>

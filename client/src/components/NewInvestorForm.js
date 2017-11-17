@@ -1,4 +1,15 @@
 import React, { Component } from 'react';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import injectTapEventPlugin from 'react-tap-event-plugin';
+import TextField from 'material-ui/TextField';
+import styled from 'styled-components'
+
+const Form = styled.form`
+margin: auto 400px ;
+background-color: rgba(255, 255, 255, .2);
+color: black;
+`
+
 
 class NewInvestorForm extends Component {
 
@@ -33,8 +44,8 @@ class NewInvestorForm extends Component {
 
     render() {
         return (
-            <div>
-                <form onSubmit={this.handleSubmit} >
+            <div class="row">
+                <Form fonSubmit={this.handleSubmit} >
                     <div>
                         <label htmlFor="name">  Enter Name</label>
                         <input onChange={this.handleChange} placeholder="Enter Name Here" value={this.state.newInvestor.name} type="text" name="name" />
@@ -56,7 +67,7 @@ class NewInvestorForm extends Component {
                     </div>
 
                     <button type="submit">Add A Investor </button>
-                </form>
+                </Form>
 
             </div>
         );
