@@ -24,6 +24,7 @@ Future Development
 4. A ticker to keep track of stock trends throughout the day
 5. Revamp db for and site layout for improved UX
 6. Further styling for improved UX
+7. User authentication and authorization
 
 Technologies Used
 1. Ruby on Rails
