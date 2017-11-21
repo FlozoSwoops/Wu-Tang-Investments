@@ -27,7 +27,7 @@ class NavBar extends Component {
             <Nav>
               
             <Link to ="/"> Home Page </Link>
-            <Link to ="/"> Sign Up </Link>
+            <Link to ="/graphs"> Trends </Link>
             <Link to ="/"> Log In  </Link>
             
 
