@@ -9,12 +9,22 @@ position: center;
 margin: auto 20% ;
 background-color: rgba(255, 255, 255, .2);
 color: white;
-`
 
+label {
+    color: white;
+    text-size: 50px
+}
+
+input::placeholder {
+    color: white;
+}
+`
 const Button = styled.button`
 height: 30px;
-background-color: rgba(255 255 255 );
-box-shadow: 2px 2px 4px ;
+background-color: #a1f79c;
+background-image: linear-gradient(to bottom, #a1f79c, #198a13);
+border: none;
+box-shadow: 5px 5px 13px #034d1a;
 border-radius: 5px;
 text-shadow: 2px 2px 4px #000000;
 `

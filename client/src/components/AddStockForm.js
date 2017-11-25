@@ -13,11 +13,15 @@ label {
     color: white;
     text-size: 50px
 }
+
+input::placeholder {
+    color: white;
+}
 `
 
 const Wrapper = styled.div`
 position: center;
-color: green;
+color: lime;
 text-shadow: 2px 2px 4px #000000;
 
 a {
@@ -27,6 +31,16 @@ a {
 a:hover {
 color: red;
 }
+`
+const Button = styled.button`
+height: 30px;
+background-color: #a1f79c;
+background-image: linear-gradient(to bottom, #a1f79c, #198a13);
+border: none;
+box-shadow: 5px 5px 13px #034d1a;
+border-radius: 5px;
+text-shadow: 2px 2px 4px #000000;
+
 `
 
 class AddStockForm extends Component {
@@ -93,7 +107,7 @@ class AddStockForm extends Component {
                     <div>
                         <label htmlFor="symbol">  Enter Symbol</label>
                         <input onChange={this.handleChange} placeholder="Enter Name Here" value={this.state.stockInfo.symbol} type="text" name="symbol" />
-                        <button>Look Up Price</button>
+                        <Button>Look Up Price</Button>
 
                     </div>
 
@@ -114,7 +128,7 @@ class AddStockForm extends Component {
                             <label htmlFor="shares">  Shares: </label>
                             <input onChange={this.buyChange} placeholder="Number of Shares to Buy"  value={this.state.shares} type="number" name="symbol"></input>
                         </div>
-                        <button>Buy Stock</button>
+                        <Button>Buy Stock</Button>
 
                     </div>
 

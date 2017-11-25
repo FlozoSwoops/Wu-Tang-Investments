@@ -1,5 +1,5 @@
-import React, {Component} from 'react'
-import {Link} from 'react-router-dom'
+import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
 const Nav = styled.div`
@@ -15,22 +15,28 @@ height: 100px;
 width: 100%;
 a {
   text-decoration: none;
-  color: silver;
+  color: white;
 }
 a:hover {
 color: red;
 }
 `
+
 class NavBar extends Component {
     render() {
         return (
             <Nav>
-              
-            <Link to ="/"> Home Page </Link>
-            <Link to ="/graphs"> Trends </Link>
-            <Link to ="/"> Log In  </Link>
-            
-
+               
+                <div>
+                    <Link to="/"> Home  </Link>
+                </div>
+                <div>
+                    <Link to="/graphs"> Trends </Link>
+                </div>
+                <div>
+                    <Link to="/"> Log In  </Link>
+                </div>
+                
 
             </Nav>
         );
