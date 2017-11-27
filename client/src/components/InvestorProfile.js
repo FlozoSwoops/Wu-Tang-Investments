@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom'
+import { Link, Redirect } from 'react-router-dom'
 import axios from 'axios'
 import EditUserForm from './EditUserForm'
 import styled from 'styled-components'
@@ -39,7 +39,7 @@ class InvestorProfile extends Component {
             occupation: '',
             income: ''
         },
-        redirectToInvestors: false
+        redirectToHomepage: false
     }
     async componentWillMount() {
         try {
@@ -88,10 +88,13 @@ class InvestorProfile extends Component {
         console.log(investorId)
         const response = await axios.delete(`/api/investors/${investorId}`)
         console.log(response)
-        this.setState({ investors: response.data, redirectToInvestors:true})
+        this.setState({ investors: response.data, redirectToHomepage:true})
     }
     
     render() {
+        if (this.state.redirectToHomepage) {
+            return <Redirect to="/" />
+        }
         return (
 
 
@@ -120,6 +123,7 @@ class InvestorProfile extends Component {
 
                 {this.state.editMode? <Button onClick={this.toggleForm}>Close Form</Button>: ''}
                 </div>
+                
                 <Button onClick={this.deleteInvestor}>Delete User</Button>
             </Wrapper>
 
