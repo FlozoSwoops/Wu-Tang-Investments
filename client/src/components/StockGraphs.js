@@ -1,6 +1,13 @@
 import React, { Component } from 'react';
 import axios from 'axios'
+import styled from 'styled-components'
 
+const Form = styled.form`
+position: center;
+margin: auto 20% ;
+background-color: rgba(255, 255, 255, .2);
+color: white;
+`
 
 class StockGraphs extends Component {
     state = {
@@ -34,7 +41,7 @@ class StockGraphs extends Component {
     render() {
         return (
             <div>
-                <form onSubmit={this.handleSubmit}>
+                {/* <Form onSubmit={this.handleSubmit}>
                     <div>
                         <label htmlFor="symbol">  Enter Symbol</label>
                         <input onChange={this.handleChange} placeholder="Enter Name Here" value={this.state.stockInfo.symbol} type="text" name="symbol" />
@@ -43,8 +50,8 @@ class StockGraphs extends Component {
                     </div>
 
 
-                </form>
-
+                </Form> */}
+                    <h1>Market Research Coming Soon</h1>
             </div>
         );
     }
